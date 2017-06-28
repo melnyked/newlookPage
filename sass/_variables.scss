@@ -1,0 +1,45 @@
+// ===========================================
+// Змінні кольорів
+// ===========================================
+$white				: rgba(255,255,255,1);
+$whiteTr06			: rgba(255,255,255,0.61);
+$whiteTr07 			: rgba(255,255,255,0.7);
+$black				: rgba(0,0,0,1);
+$red				: rgba(154,39,34,1);
+$turquoise 			: rgba(52,181,175,.26);
+$lightGray 			: rgba(204,204,204,1);
+$lightPurpBlue  	: rgba(192,168,200,1);
+$gray 				: rgba(120,120,120,1);
+$brown 				: rgba(26,0,0,1);
+$pearlyLightGray 	: rgba(153,153,153,1);
+$smokeWhite 		: rgba(247,247,247,1);
+$paleblue 			:rgba(218,220,223,1);
+$sіlverGray 		: rgba(153, 163, 164, 1);
+
+// ===========================================
+// Кольори основних елементів
+// ===========================================
+$cBgMain 			: $white;
+$cBgSecond			: $smokeWhite;
+$cBgSlotName 		: $whiteTr06;
+$cTextDark 			: $black;
+$cTextLight 		: $cBgMain;
+$cTextMiddle 		: $gray;
+$cTextAttention 	: $red;
+$cSocBgHover 		: $turquoise;
+$cQuickBg 			: $whiteTr07;
+$cSliderBg 			: $cBgSecond;
+$cGuideBg 			: $cBgSecond;
+$cMain 				: $brown;
+$cBtnBg-negative 	: $cMain;
+$cEmailPlaceholder 	: $pearlyLightGray;
+$cSearchPlaceholder : $lightPurpBlue;
+$cLine 				: $lightGray;
+$clineBottom 		: $paleblue;
+$clineBottomBanner 	: $sіlverGray; 
+
+// ===========================================
+// Розміри елементів елементів
+// ===========================================
+$btnHeight 			: 50px;
+$h1size 			: 60px;

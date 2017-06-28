@@ -1,0 +1,169 @@
+.page__footer {
+
+}
+.footer {
+	min-height: (258/16)*1rem;;
+	border-top: 1px solid $cLine;
+} 
+.footer__signUpEmail {
+
+} 
+.signUpEmail {
+}
+.signUpEmail__signForm {
+
+} 
+.signForm {
+	min-height: 130px;
+ 	@include flex-space-between;
+	letter-spacing: 1px;
+	font-family: "HelveticaNeueLTStd";
+	font-style: normal;
+}
+.signForm__text {
+	display: block;
+	min-width: 19%;
+	text-transform: uppercase;
+	@include font-size(18px);
+	font-weight: 100;
+	color: $cTextDark;
+
+}
+.signForm__field {
+	display: inline-block;
+	min-height: (50/16)*1rem;
+	width: 34%;//410px;
+	min-width: 300px;
+	border: 1px solid $cEmailPlaceholder;
+	padding: 0 20px;
+	margin: 0 .5vw 0 1.5vw;
+	box-sizing: border-box;
+	outline:none;
+	@include font-size(14px);
+	font-style: italic;
+}
+.signForm__btn {
+	
+}
+.btn--backgroundNegative {
+	background: $cBtnBg-negative;
+	color: $cBgMain;
+} 
+.btn__img {
+	height: (14/16)*1rem;
+	width: (22/16)*1rem;
+}
+.btn__img-st0{
+	fill:none;
+	stroke:$cBgMain;
+	stroke-linecap:round;
+	stroke-linejoin:round;
+	stroke-miterlimit:10;
+}
+.signForm__textBlock {
+
+}
+.textBlock {
+	min-width: 25%;
+	font-family: "HelveticaNeueLTStd";
+	font-style: italic;
+	text-align: center;
+ 
+}
+.textBlock__header {
+	@include font-size(14px);
+	font-weight: 300;
+	color: $cTextDark;
+}
+.textBlock__text {
+	@include font-size(12px);
+	font-weight: 100;
+	color: $cEmailPlaceholder;
+}
+.footer__footerMenu {
+
+}
+.footerMenu {
+ 	background: $cBtnBg-negative;
+ 	min-height: (48/16)*1rem;
+}
+.footerMenu__menu {
+
+}
+.menu {
+	margin: 0 0 (82/16)*1rem 0;
+	padding: 0;
+	@include flex-space-between;
+}
+.menu__item {
+	list-style: none;
+	line-height: (48/16)*1rem;
+
+
+	font-family: "HelveticaNeueLTStd";
+	font-weight: 100;
+	font-style: normal;
+	letter-spacing: 1px;
+}
+.menu__link {
+	display: block;
+	@include font-size(16px);
+	font-family: "HelveticaNeueLTStd";
+	font-style: normal;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: $cTextLight;
+	text-align: center;
+	border-bottom: 1px solid $cBtnBg-negative;
+	&:hover {
+		border-bottom: 1px solid $cTextLight;
+	}
+} 
+.menu__copyright {
+}
+.footerMenu__copyright {
+
+}
+.copyright {
+	line-height: (48/16)*1rem;
+	font-family: "HelveticaNeueLTStd";
+	@include font-size(12px);
+	font-weight: 100;
+	letter-spacing: 1px;
+	list-style: none;
+ 	margin: 0;
+}
+.copyright__title {
+	display: inline-block;
+	margin: 0 0 0 2vw;
+	color: $cTextLight;
+}
+.copyright__description {
+	display: inline-block;
+	margin: 0;
+	color: $cTextLight;
+}
+
+
+
+@media (max-width: 880px){
+	.signForm {
+		flex-direction: column;
+	}
+}
+
+@media (max-width: 900px){
+	.menu {
+		flex-direction: column;
+		align-items: stretch;
+	}
+}
+
+@media (max-width: 1056px){
+	.signForm__textBlock {
+		display: none;
+	}
+	.signForm__field {
+		width: 50%;
+	}
+}

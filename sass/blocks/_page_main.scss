@@ -1,0 +1,593 @@
+.page__main {  } 
+
+ .main {  } 
+
+.main__new-collection {}
+
+/* ========================= banner`s section ========================= */
+
+ .main__banner {  } 
+
+ .baner {
+	@include flex-column-center;
+ 	min-height: (587/16)*1rem;
+ 	border-bottom: 1px solid $clineBottomBanner;
+ 	background: url(../img/banner-bg.jpg) center center no-repeat;
+ 	/* позиціонування в центрі, щоб при 
+ 	зменшенні екрану, відображалась центральна частина
+ 	*/
+ } 
+
+.baner__name {
+	margin: 140px 0 0 0;
+	@include font-size(14px);
+	text-transform: uppercase;
+	color: $cTextLight;
+	letter-spacing: 2px;
+	@include before-after-line;
+} 
+
+.baner__headerText {
+	padding: 10px;
+	text-align: center;
+	font-family: "pfdintextcomppro-thin";
+	font-weight: 100;
+	@include font-size($h1size);
+	text-transform: uppercase;
+	color: $cTextLight;
+} 
+
+.baner__btn {
+	color: $cTextLight;
+	border-color: $cTextLight;
+}
+
+/* ========================= end banner`s section ========================= */
+
+
+.btn {
+	display: inline-block;
+	font-family: "HelveticaNeueLTStd";
+	font-weight: 300;
+	letter-spacing: 2px;
+	vertical-align: middle;
+	line-height: $btnHeight;
+	user-select: none;
+	outline: none;
+	border: 1px solid;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 0 40px;
+} 
+
+/* ========================= baner`s section ========================= */
+
+.main__baner2 {
+
+}
+
+.baner2 {
+	background: url(../img/baner2-bg.jpg) top right no-repeat;
+}
+
+.baner2__new-season {
+
+}
+
+.new-season {
+	@include flex-column-center;
+	min-height: 410px;
+	width: 44%;
+	letter-spacing: 2px;
+}
+
+.new-season__title {
+	margin: 30px;
+	font-family: "pfdintextcomppro-thin";
+	text-transform: uppercase;
+	@include font-size (40px);
+}
+
+.new-season__text {
+	text-align: center;
+	font-family: "HelveticaNeueLTStd";
+	font-style: italic;
+	@include font-size (16px);
+	font-weight: 100;
+}
+
+.new-season__price {
+	@include before-dollar;
+	margin: 35px;
+	font-family: "pfdintextcomppro-thin";
+	@include font-size (60px);
+}
+
+.new-season__btn {
+	color: $cTextDark;
+	border-color: $cTextDark;
+	transition: all .5s ease;
+	margin: 15px;
+		&:hover {
+			background: $cBtnBg-negative;
+			color: $cBgMain;
+		}
+}
+
+@media (max-width: 900px) {
+	.baner2 {
+		background-size: cover;
+	}
+	.new-season {
+		width: 75%;
+	}
+	.baner2__new-season {
+		margin: 0 auto;
+	}
+}
+@media (max-width: 600px) {
+	.baner2 {
+		background-position: center;
+	}
+}
+
+/* ========================= end baner`s section ========================= */
+
+/* ========================= social`s section ========================= */
+.main__tiles {
+
+}
+.tiles {
+	&::after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+// соціальний блок
+.tiles__social {
+
+}
+.tile {
+	display: flex;
+	text-decoration: none;
+	margin-bottom: 10px;
+	color: $cTextDark;
+}
+.social {
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 100%;
+	padding: 20px 0;
+}
+.social__social-link {
+	margin: 0 20px;
+}
+.social-link {
+	box-sizing: border-box;
+	display: inline-flex;
+	width: 40px;
+	height: 40px;
+	border: 1px solid $cTextDark;
+	overflow: hidden;
+	transform: rotate(45deg);
+	transition: background .5s ease;
+		&:hover {
+			background: $cSocBgHover;
+			border: 2px solid $cTextDark;
+		}
+}
+.social-link__svg {
+	margin: auto;
+	width: 26px;
+	height: 26px;
+	transform: rotate(-45deg);
+	&-st0 {
+		fill: $cTextDark;
+	}
+}
+
+// купальники блок
+.tiles__swimwear {
+}
+.swimwear {
+	height: 300px;
+	background: url(../img/slot1.jpg) top center no-repeat;
+	background-size: cover;
+}
+.swimwear__title {
+	@include slot-title;
+	margin-bottom: auto;
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			bottom: -7px;
+			left: 50%;
+			margin: 0 0 0 -7px;
+			width: 13px;
+			height: 13px;
+			background: $cTextDark;
+			transform: rotate(45deg);
+		}
+}
+
+// чоколовіча мода
+.tiles__man {
+}
+.man {
+	height: 300px;
+	background: url(../img/slot2.jpg) top center no-repeat;
+	background-size: cover;
+}
+.man__title {
+	@include slot-title;
+	margin-top: auto;
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: -7px;
+			left: 50%;
+			margin: 0 0 0 -7px;
+			width: 13px;
+			height: 13px;
+			background: $cTextDark;
+			transform: rotate(45deg);
+		}
+	&--attention {
+		color: $cTextAttention;
+		font-weight: 500;
+	}
+}
+
+// нові тренди блок
+.tiles__trend {
+
+}
+.trend {
+	height: 300px;
+	background: url(../img/slot3.jpg) top center no-repeat;
+	background-size: cover;
+}
+.trend__title {
+	@include slot-title;
+	margin-top: auto;
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: -7px;
+			left: 50%;
+			margin: 0 0 0 -7px;
+			width: 13px;
+			height: 13px;
+			background: $cTextDark;
+			transform: rotate(45deg);
+		}
+}
+
+
+// кімоно блок
+.tiles__kimono {
+
+}
+.kimono {
+	@include flex-column-center;
+	height: 300px;
+	color: $cTextLight;
+	background: url(../img/slot4.jpg) top center no-repeat;
+	background-size: cover;
+}
+.kimono__title {
+	@include before-after-line;
+	font-family: "HelveticaNeueLTStd";
+	font-style: normal;
+	font-weight: 100;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	@include font-size (14px);
+}
+.kimono__text {
+	text-transform: uppercase;
+	font-family: pfdintextcomppro-thin;
+	@include font-size (50px);
+	text-align: center;
+}
+.kimono__btn {
+	color: $cTextLight;
+	border-color: $cTextLight;
+	transition: all .5s ease;
+	margin: 15px;
+		&:hover {
+			background: $cTextLight;
+			color: $cTextDark;
+		}
+}
+// * {
+// 	border: 1px solid red;
+// }
+
+@media (min-width: 400px){
+	.swimwear,
+	.man,
+	.trend,
+	.kimono {
+		height: 420px;
+	}
+	.kimono__text {
+		margin: .5em;
+	}
+}
+@media (min-width: 600px){
+	.tiles {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+}
+	.swimwear,
+	.man,
+	.trend,
+	.kimono {
+		width: 50%;
+	}
+	.swimwear,
+	.man {
+		margin: 0 0 5px 0;
+	}
+}
+@media (min-width: 800px){
+	.swimwear,
+	.man,
+	.trend,
+	.kimono {
+		height: 500px;
+	}
+}
+@media (min-width: 1200px){
+	.tiles {
+		display: block;
+		height: 978px;
+		font-size: 0;
+	}
+	.tile {
+		margin: 0;
+	}
+	.social {
+		align-content: center;
+		width: 282px;
+		height: 300px;
+		
+	}
+	.tiles__social {
+		margin-right: 20px;
+		float: left;
+	}
+	.tiles__swimwear {
+		margin-right: 20px;
+		float: left;
+	}
+	.swimwear {
+		width: 410px;
+		height: 538px;
+	}
+	.tiles__man {
+		float: right;
+	}
+	.man {
+		width: 468px;
+		height: 538px;
+	}
+	.tiles__trend {
+		float: left;
+		position: relative;
+		top: -225px;
+		margin-right: 20px;
+	}
+	.trend {
+		width: 282px;
+		height: 665px;
+	}
+	.tiles__kimono {
+		float: left;
+		margin: 20px 0 0 0;
+	}
+	.kimono {
+		width: 898px;
+		height: 420px;
+	}
+
+}
+
+/* ========================= end social`s section ========================= */
+
+/* ========================= slider`s section ========================= */
+
+.main__new-collection {
+
+}
+.new-collection {
+
+}
+
+.new-collection__header {
+	text-align: center;
+	font-family: "HelveticaNeueLTStd";
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	font-style: normal;
+	font-weight: 100;
+	@include font-size(36px);
+}
+
+.new-collection__slider {
+	margin-bottom: 65px;
+}
+
+.slider {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	background: $cBgSecond;
+	
+}
+.slider__wrap {
+	overflow: hidden;
+	order: 2;
+	max-width: 1200px;
+}
+.slider__items {
+	list-style: none;
+	width: 10000%; 
+	margin:  0;
+	padding: 0;
+}
+.slider__item {
+	float: left;
+	width: 232px;
+	height: 339px;
+	margin: 0 10px 0 0;
+	overflow: hidden;
+	position: relative;
+}
+.slider__img {
+	display:block;
+	width: 232px;
+	height: 339px;
+}
+.slider__quick-view {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.quick-view {
+	display: flex;
+	flex-direction: column;
+	justify-content:  space-around;
+	width: 232px;
+	height: 339px;
+	opacity: 0;
+	background: $cQuickBg;
+	&:hover {
+		opacity: 1;
+	}
+}
+.quick-view__title {
+	display: inline-block;
+	margin: 0 auto;
+	text-align: center;
+	@include font-size(16px);
+	font-family: "HelveticaNeueLTStd";
+	font-style: italic;
+	font-weight: 100;
+	letter-spacing: 2px;
+}
+.quick-view__price {
+	display: inline-block;
+	margin: 0 auto;
+	@include font-size(40px);
+	@include before-dollar;
+	font-family: "pfdintextcomppro-thin";
+}
+.quick-view__btn {
+	display: inline-block;
+	margin: 0 auto 30px;
+	color: $cTextDark;
+	border-color: $cTextDark;
+	transition: all .5s ease;
+	&:hover {
+		background: $cBtnBg-negative;
+		color: $cBgMain;
+	}
+}
+.slider__right {
+	width: 20px;
+	height: 38px;
+	cursor: pointer;
+	order: 3;
+	margin: 150px auto auto 20px;
+
+}
+.slider__right-st0 {
+	fill:#040706;
+}
+.slider__left {
+	width: 20px;
+	height: 38px;
+	cursor: pointer;
+	order: 1;
+	margin: 150px 20px auto auto;
+}
+.slider__left-st0 {
+	fill:#040706;
+}
+
+/* ========================= end slider`s section ========================= */
+
+/* ========================= guides` section ========================= */
+
+.main__guide {
+	background: $cBgSecond;
+	margin-bottom: 80px;
+}
+ 
+.guide {
+	display: flex;
+}
+
+.guide__map {
+	max-width: 494px;
+	max-height: 242px;
+	width: 50%;
+	margin: 40px auto;
+}
+
+.store-locator{
+	@include flex-column-center;
+	width: 50%;
+	min-height: 280px;
+	font-family: "HelveticaNeueLTStd";
+	color: $cEmailPlaceholder;
+
+}
+
+.store-locator__title {
+	@include font-size (30px);
+	text-transform: uppercase;
+	font-style: normal;
+	font-weight: 100;
+	letter-spacing: 2px;
+}
+
+.store-locator__text {
+	margin: 50px 0;
+	padding: 0 10px;
+	@include font-size (14px);
+	font-style: italic;
+	letter-spacing: 2px;
+	font-weight: 100;
+	text-align: center;
+}
+
+.store-locator__btn {
+	color: $cTextDark;
+	border-color: $cTextDark;
+	transition: all .5s ease;
+		&:hover {
+			background: $cBtnBg-negative;
+			color: $cBgMain;
+		}
+}
+
+@media (max-width: 780px) {
+	.guide__map {
+		display: none;
+	}
+
+	.store-locator {
+		width: 100%;
+	}
+}
+
+/* ========================= guides` section ========================= */

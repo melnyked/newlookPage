@@ -1,0 +1,154 @@
+// ===========================================
+// String Replace функція для Font-face
+// ===========================================
+@function str-replace($string, $search, $replace: "") {
+	$index: str-index($string, $search);
+
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+
+	@return $string;
+}
+
+// ===========================================
+// Font-face
+// ===========================================
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff ttf svg) {
+	$src: null;
+
+	$extmods: (
+		eot: "?",
+		svg: "#" + str-replace($name, " ", "_")
+	);
+
+	$formats: (
+		otf: "opentype",
+		ttf: "truetype"
+	);
+
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+	}
+}
+
+
+
+// ===========================================
+// Функція підрахунку REM
+// ===========================================
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+// ===========================================
+// Font-Size REM
+// ===========================================
+@mixin font-size($size) {
+  // font-size: $size;
+  font-size: calculateRem($size);
+}
+
+
+
+// ===========================================
+// Before after
+// ===========================================
+@mixin before-after-line {
+	&:before {
+		content: "";
+		display: inline-block;
+		vertical-align: middle;
+		height: 0;
+		width: 24px;
+		border-top: 1px solid $cTextLight;
+		margin-right: 8px;
+	}
+	&:after {
+		content: "";
+		display: inline-block;
+		vertical-align: middle;
+		height: 0;
+		width: 24px;
+		border-top: 1px solid $cTextLight;
+		margin-left: 8px;
+	}
+}
+
+
+@mixin before-after-bracket  {
+	&:before {
+		content: "(";
+	}
+	&:after {
+		content: ")";
+	}
+}
+
+
+@mixin before-dollar {
+	&:before {
+		content: "$";
+	}
+}
+// ===========================================
+// Flex
+// ===========================================
+
+@mixin flex-space-between {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+@mixin flex-column-center {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+
+
+/* Корисно викорисовувати для певних елементыв (не декоративних),
+	які не повинні відображатися, але які мають бути доступні
+	для екранних читалок. 
+	dispaly: none; - в цій ситуації не підходить.*/
+@mixin visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+@mixin slot-title{
+	position: relative;
+	min-width: 100%;
+	line-height: 69px;
+	margin: 0;
+	font-family: "HelveticaNeueLTStd";
+	font-weight: 300;
+	@include font-size(20px);
+	font-style: normal;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	background: $cBgSlotName;
+}

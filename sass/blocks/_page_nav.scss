@@ -1,0 +1,133 @@
+.page__nav {
+}
+.nav {
+	position: relative;
+	border-bottom: 1px solid $clineBottom;
+} 
+.nav__toggle {
+	display: none;
+}
+.nav__items {
+	@include flex-space-between;
+	min-height: 73px;
+	margin: 0;
+	padding: 0;
+}
+.nav__item {
+	line-height: 71px;
+	list-style: none;
+}
+.nav__link {
+	display: block;
+	paddind: 5px;
+	border-bottom: 2px solid transparent;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	text-decoration: none;
+	@include font-size(16px);
+	font-family: "HelveticaNeueLTStd";
+	font-weight: 300;
+	color: $cTextDark;
+	&:hover {
+		border-bottom-color: $cTextDark;
+	}
+}
+.nav__link--attention {
+	color: $cTextAttention;
+	&:hover {
+			border-bottom-color: $cTextAttention;
+		}
+}
+/*==================================
+* @media (max-width: 800px)
+* ==================================
+*/
+
+@media (max-width: 800px) {
+	.nav__toggle {
+		display: block;
+		position: absolute;
+		right: 0;
+		width: 70px;
+		height: 50px;
+		padding: 0;
+		border: none;
+		z-index: 2;
+		background: $cMain;
+		&:hover {
+			background: lighten($cMain, 15%);
+		}
+		&:active {
+			background: lighten($cMain, 15%);
+		}
+	}
+	.nav--closed .nav__toggle {
+		&::before {
+			content : "";
+			display: block;
+			position: absolute;
+			top: 15px;
+			right: 20px;
+			height: 4px;
+			width: 30px;
+			background: $cLine;
+			box-shadow: 0 8px 0 $cLine, 0 16px 0 $cLine;
+		}
+	}
+	.nav--closed .nav__items {
+		display: none;
+
+		/* використовується для показання активного пункту меню. */
+		&:active {
+			display: block;
+		} 
+	}
+	.nav--opened .nav__toggle {
+		top: 0;
+		right: auto;
+		left: 0;
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 24px;
+			left: 18px;
+			width: 30px;
+			height: 4px;
+			background: $cLine;
+		}
+		&::before {
+			transform: rotate(45deg);
+		}
+		&::after {
+			transform: rotate(-45deg);
+		}
+	}
+	.nav--opened .content {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 70px;
+	}
+	.nav__items {
+		flex-direction: column;
+		align-items: stretch;
+	}
+	.nav__item {
+		text-align: center;
+	}
+	.nav__link {
+		font-weight: 600;
+	}
+	.nav--nojs .nav__toggle {
+		display: none;
+	}
+	.nav--nojs .content {
+		position: static;
+	}
+	.nav--nojs .nav__item {
+		display: block;
+	}
+}
+/*==================================
+*/
